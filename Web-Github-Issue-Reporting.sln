@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{A0786B88-2ADB-4C21-ABE8-AA2D79766269}") = "PHP-web-github-issue-reporting", "src\PHP\PHP-web-github-issue-reporting.phpproj", "{519860A3-9AC4-4F15-BB96-AFE0DA22FA22}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8C79DA14-8F80-457A-8F82-7811E0D45407}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		ACKNOWLEDGMENTS.md = ACKNOWLEDGMENTS.md
+		AUTHORS.md = AUTHORS.md
+		CHANGELOG.md = CHANGELOG.md
+		CODE_OF_CONDUCT.md = CODE_OF_CONDUCT.md
+		CONTRIBUTING.md = CONTRIBUTING.md
+		LICENSE.md = LICENSE.md
+		README.md = README.md
+		RELEASE.md = RELEASE.md
+		ROADMAP.md = ROADMAP.md
+		TODO.md = TODO.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{519860A3-9AC4-4F15-BB96-AFE0DA22FA22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{519860A3-9AC4-4F15-BB96-AFE0DA22FA22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A807AC42-0D51-4242-BA88-AA1E514DC9FB}
+	EndGlobalSection
+EndGlobal
