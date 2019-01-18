@@ -70,3 +70,7 @@ packages/
 .vs
 .vscode
 *.orig
+
+# custom
+config.development.php
+/src/PHP/Vendor/Recaptcha/examples

@@ -1,5 +1,10 @@
 # web-github-issue-reporting
-Simple (KISS) user friendly webpage to report a GitHub issue, with DB backup  
+Simple (KISS) user friendly webpage to report a GitHub issue,
+with DB backup (SQlite, not yet).
+
+- Responsive with Bootstrap 4.
+- Antispam
+- Copy to web server, edit config vars, and run.  
 
 ## Getting Started
 
@@ -10,26 +15,31 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to install the software and how to install them
 
 ```
-Give examples
+PHP >= 5.6
+Sqlite 3
+Google Recaptcha v3 Keys
+Github Project
 ```
 
 ### Installing
 
 A step by step series of examples that tell you how to get a development env running
 
-Say what the step will be
+1. Copy the folder to subdirectory/subdomain.
+2. Go to Google and register the website to get [Recaptcha](https://www.google.com/recaptcha/admin#list)
+3. Config de app:
 
 ```
-Give the example
+3.1 put Google Recaptcha v3 keys in config.php
+3.2 in header of index.php set Github user data:
+$GithubUsernameToken = "";
+$GithubUsername = "JavierCanon";
+$GithubRepository = "web-github-issue-reporting";
 ```
 
-And repeat
+#### Screenshots
 
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
+![](docs/img/screenshot-localhost-37944-2019.01.17-18-42-05.png?raw=true)
 
 ## Running the tests
 
