@@ -1,10 +1,19 @@
 # web-github-issue-reporting
 Simple (KISS) user friendly webpage to report a GitHub issue,
-with DB backup (SQlite, not yet).
+with DB backup in SQlite.
 
 - Responsive with Bootstrap 4.
-- Antispam
+- User Antispam and Google Score Antispam
 - Copy to web server, edit config vars, and run.  
+
+
+## Philosophy of Javier Cañon
+* KISS by design and programming. An acronym for "keep it simple, stupid" or "keep it stupid simple", is a design principle. The KISS principle states that most systems work best if they are kept simple rather than made complicated; therefore, simplicity should be a key goal in design, and unnecessary complexity should be avoided. Variations on the phrase include: "Keep it simple, silly", "keep it short and simple", "keep it simple and straightforward", "keep it small and simple", or "keep it stupid simple".
+
+* Select the best tools for the job, use tools that take less time to finish the job.
+* Productivity over complexity and avoid unnecessary complexity for elegant or beauty code.
+
+* Computers are machines, more powerful every year, give them hard work, concentrate on being productive.
 
 ## Getting Started
 
@@ -30,11 +39,11 @@ A step by step series of examples that tell you how to get a development env run
 3. Config de app:
 
 ```
-3.1 put Google Recaptcha v3 keys in config.php
+3.1 put Google Recaptcha v3 keys in config.php file
 3.2 in header of index.php set Github user data:
-$GithubUsernameToken = "";
-$GithubUsername = "JavierCanon";
-$GithubRepository = "web-github-issue-reporting";
+$GithubUsernameToken = "YourAuthorizationToken";
+$GithubUsername = "YourUsername";
+$GithubRepository = "TheFullNameOfYourRepository";
 ```
 
 #### Screenshots
@@ -67,7 +76,7 @@ Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [PHP Tools for Visual Studio]() - The PHP dev web tool used
+* Microsoft Visual Studio 2019
 
 
 ## Contributing
@@ -80,7 +89,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Javier Cañon** - *Initial work* - [JavierCanon](https://www.javiercanon.com)
+* [Javier Cañon](https://www.javiercanon.com)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
@@ -88,9 +97,6 @@ See also the list of [contributors](https://github.com/your/project/contributors
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+---
+Made with ❤️ by [Javier Cañon](https://www.javiercanon.com).
 

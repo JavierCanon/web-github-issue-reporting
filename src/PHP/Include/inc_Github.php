@@ -32,7 +32,7 @@ function SendToGithub(){
 
     $appVersion = "?";
 
-    if(isset($_GET['AppVersion'])) {$appVersion = $_GET['AppVersion'];}
+    if(isset($_GET['appVersion'])) {$appVersion = $_GET['appVersion'];}
 
 	$named_array = array(
 					  "title" => ('New Report '.$_POST['title'].' Ver '.$appVersion)

@@ -1,10 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.271
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{A0786B88-2ADB-4C21-ABE8-AA2D79766269}") = "PHP-web-github-issue-reporting", "src\PHP\PHP-web-github-issue-reporting.phpproj", "{519860A3-9AC4-4F15-BB96-AFE0DA22FA22}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8C79DA14-8F80-457A-8F82-7811E0D45407}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
@@ -41,18 +39,41 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "docs", "docs\", "{DC8964C7-
 		SlnRelativePath = "docs\"
 	EndProjectSection
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "PHP", "src\PHP\", "{13AC6F3D-DBEF-47C1-98D1-C3BAAD6C79BA}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_55931"
+		Debug.AspNetCompiler.PhysicalPath = "src\PHP\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55931\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_55931"
+		Release.AspNetCompiler.PhysicalPath = "src\PHP\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55931\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "55931"
+		SlnRelativePath = "src\PHP\"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{519860A3-9AC4-4F15-BB96-AFE0DA22FA22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{519860A3-9AC4-4F15-BB96-AFE0DA22FA22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC8964C7-18A9-462A-AF4B-73E6839925FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DC8964C7-18A9-462A-AF4B-73E6839925FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC8964C7-18A9-462A-AF4B-73E6839925FC}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{DC8964C7-18A9-462A-AF4B-73E6839925FC}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{13AC6F3D-DBEF-47C1-98D1-C3BAAD6C79BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13AC6F3D-DBEF-47C1-98D1-C3BAAD6C79BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13AC6F3D-DBEF-47C1-98D1-C3BAAD6C79BA}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{13AC6F3D-DBEF-47C1-98D1-C3BAAD6C79BA}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

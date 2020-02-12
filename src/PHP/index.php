@@ -3,13 +3,37 @@
 /*******************************************/
 $DevMode = false;
 
+if(!isset($_GET['software'])){
+    echo "Error, variable software invalida.";
+    die;
+}
+
 /* github */
-$GithubUsernameToken = "";
-$GithubUsername = "JavierCanon";
-$GithubRepository = "web-github-issue-reporting";
+$GithubUsernameToken = "GithubUsernameToken";
+$GithubUsername = "GithubUsername";
+
+$software = $_GET['software']; // use a Get param to specify the repository
+
+// set the github correspondent project
+if($software=="XXX"){
+
+    $GithubRepository = "XXX";
+
+}else if($software=="YYY"){
+
+    $GithubRepository = "YYY";
+
+}else{
+    echo "Error, variable software invalid.";
+    die;
+
+}
+
 
 /*******************************************/
 session_start();
+
+
 
 if(!isset($_POST['title']) && !isset($_POST['issue']) && !isset($_POST['submit'])){
     // start session var.
@@ -51,10 +75,19 @@ $showMsg = "";
 if(isset($_POST['title']) && isset($_POST['issue']) && isset($_POST['submit'])){
 
     if($_SESSION["IsRecaptchaOK"] == true ){
+
+        $pdo = (new SQLiteConnection())->connect();
+        $sqlite = new SQLiteInsert($pdo);
+
+        $software = isset($_GET['software']) ? $_GET['software'] : "?";
+
+        $sqlite->insertTask($_POST['title'], $_POST['issue'], $software );
+
         SendToGithub();
-        $showMsg ='<div class="alert alert-success">Thanks, report sended.</div>';
+
+        $showMsg ='<div class="alert alert-success">Gracias, reporte enviado.</div>';
     } else{
-        $showMsg ='<div class="alert alert-danger">Error sending the report.</div>';
+        $showMsg ='<div class="alert alert-danger">Disculpenos, Error enviando el reporte.</div>';
 
     }
 }
@@ -97,14 +130,16 @@ if(isset($_POST['title']) && isset($_POST['issue']) && isset($_POST['submit'])){
     else:
         // Add the g-recaptcha tag to the form you want to include the reCAPTCHA element
     ?>
-    <form id="formReport" action="index.php" class="form-reporting" method="post" enctype="multipart/form-data">
+    <form id="formReport" action="index.php?<?php echo $_SERVER['QUERY_STRING'] ?>" class="form-reporting" method="post" enctype="multipart/form-data">
         <div class="text-center mb-4">
 
             <h1 class="h3 mb-3 font-weight-normal">
-                <i class="fas fa-bug fa-2x"></i> Report an Issue
+                <i class="fas fa-bug fa-2x"></i> Reportar una Incidencia
             </h1>
             <p>
-                Please use the next form to report an issue, with the details to reproduce and links to cloud files, photos or videos
+                Por favor utilice el siguiente formulario para reportar una incidencia o bug,
+                trate de explicar los detalles para poder reproducir la falla,
+                copie links a fotos o videos
                 (Google Drive, Google Photos, Microsoft Onedrive, Dropbox, Wetransfer, etc.).
             </p>
         </div>
@@ -116,13 +151,13 @@ if(isset($_POST['title']) && isset($_POST['issue']) && isset($_POST['submit'])){
         </div>
 
         <div class="form-label-group">
-            <label for="title">Issue Title</label>
+            <label for="title">Titulo u Asunto</label>
             <input type="text" id="title" name="title" class="form-control" placeholder="Issue Title" required autofocus
                 value="<?php if(isset($_GET['title'])) { echo $_GET['title']  ;} ?>" />
         </div>
 
         <div class="form-label-group">
-            <label for="issue">Issue Text</label>
+            <label for="issue">Detalles Incidencia</label>
             <textarea id="issue" name="issue" class="form-control" placeholder="Issue Text" maxlength="4000"
                 rows="10" required>
                 <?php if(isset($_GET['issue'])) { echo $_GET['issue'] ;}?>
@@ -130,15 +165,15 @@ if(isset($_POST['title']) && isset($_POST['issue']) && isset($_POST['submit'])){
         </div>
 
         <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">
-            <i class="fa fa-share-square" aria-hidden="true"></i> Submit
+            <i class="fa fa-share-square" aria-hidden="true"></i> Enviar
         </button>
 
         <div class="alert alert-danger" id="sendMsgError" style="display:none;">
-            <strong>Error</strong> Cant sent the report.
+            <strong>Error</strong> No se pudo enviar el reporte.
         </div>
 
         <div class="alert alert-success" id="sendMsgOK" style="display:none;">
-            <strong>Thanks,</strong> the report was sended.
+            <strong>Gracias,</strong> Reporte enviado.
         </div>
         <?php if($DevMode){ ?>
         <div id="response" class="alert alert-danger"></div><?php } ?>
@@ -174,7 +209,7 @@ if(isset($_POST['title']) && isset($_POST['issue']) && isset($_POST['submit'])){
                 rndmNr2 = Math.floor(Math.random() * 10),
                 totalNr = rndmNr1 + rndmNr2;
 
-            $(label).text('How much is? ' + rndmNr1 + ' + ' + rndmNr2 + ' =');
+            $(label).text('Cuanto es? ' + rndmNr1 + ' + ' + rndmNr2 + ' =');
 
             $(input).keyup(function () {
                 if ($(this).val() == totalNr)

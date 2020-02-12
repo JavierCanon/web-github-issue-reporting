@@ -1,0 +1,46 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Name>PHP.bugs.Softcanon</Name>
+    <ProjectGuid>{4516325c-d301-4cfa-9472-f7d599f8820f}</ProjectGuid>
+    <RootNamespace>
+    </RootNamespace>
+    <OutputType>Library</OutputType>
+    <ProjectTypeGuids>{A0786B88-2ADB-4C21-ABE8-AA2D79766269}</ProjectTypeGuids>
+    <SpecificPageValue>index.php</SpecificPageValue>
+    <StartAction>SpecificPage</StartAction>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <IncludeDebugInformation>true</IncludeDebugInformation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <IncludeDebugInformation>false</IncludeDebugInformation>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Css\examples.css" />
+    <Compile Include="Css\floating-labels.css" />
+    <Compile Include="Css\StyleSheet.css" />
+    <Compile Include="DB\Issues.db" />
+    <Compile Include="ErrorReport\Social-Office\ErrorReport.php" />
+    <Compile Include="Include\inc_DB.php" />
+    <Compile Include="Include\inc_Github.php" />
+    <Compile Include="appengine-https.php" />
+    <Compile Include="config.development.php" />
+    <Compile Include="config.php" />
+    <Compile Include="favicon.ico" />
+    <Compile Include="index.php" />
+    <Compile Include="recaptcha-v3-request-scores.php" />
+    <Compile Include="recaptcha-v3-verify.php" />
+    <Compile Include="robots.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="cgi-bin" />
+    <Folder Include="Css" />
+    <Folder Include="DB" />
+    <Folder Include="ErrorReport\Social-Office\" />
+    <Folder Include="ErrorReport\Social-Office\Upload\" />
+    <Folder Include="Include" />
+    <Folder Include="ErrorReport\" />
+    <Folder Include="Scripts" />
+  </ItemGroup>
+</Project>

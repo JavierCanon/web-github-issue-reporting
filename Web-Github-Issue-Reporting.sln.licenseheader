@@ -1,0 +1,13 @@
+﻿extensions: designer.cs generated.cs
+extensions: .cs .cpp .h .php
+// MIT License Copyright (c) 2020 Javier Cañon | https://www.javiercanon.com
+extensions: .aspx .ascx 
+<%-- 
+MIT License Copyright (c) 2020 Javier Cañon | https://www.javiercanon.com
+--%>
+extensions: .vb
+'MIT License Copyright (c) 2020 Javier Cañon | https://www.javiercanon.com
+extensions:  .xml .config .xsd .html .htm
+<!--
+MIT License Copyright (c) 2020 Javier Cañon | https://www.javiercanon.com
+-->
